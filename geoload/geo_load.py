@@ -37,8 +37,19 @@ import os.path
 
 
 import psycopg2
+
+
+hname = "localhost"
+port = "5432"
+dbName = "aula2"
+username = "postgres"
+password = "viladoconde"
 class GeoLoad:
     """QGIS Plugin Implementation."""
+
+    # set host name, port, database name, username and password
+
+
 
     def __init__(self, iface):
         """Constructor.
@@ -232,7 +243,6 @@ class GeoLoad:
 
     def openC(self):
         #open data from file dialog
-
         infile = str(QFileDialog.getOpenFileName(filter="Shapefiles (*.shp)")[0])
         if infile is not None:
             self.iface.addVectorLayer(infile, str.split(os.path.basename(infile),".")[0], "ogr")
@@ -243,10 +253,11 @@ class GeoLoad:
         if self.dlg.checkBox_1.isChecked:
             self.dlg.checkBox_1.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Adolescent births", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Adolescent births", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Adolescent births", "geom", 'id>=0','id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Adolescent births", username)
         QgsProject.instance().addMapLayer(vlayer)
+
         self.loadCom()
 
 
@@ -255,9 +266,9 @@ class GeoLoad:
         if self.dlg.checkBox_2.isChecked:
             self.dlg.checkBox_2.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Cervical cancer screening rate", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Cervical cancer screening rate", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Cervical cancer screening rate", "geom",  'id>=0','id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Cervical cancer screening rate", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -266,9 +277,9 @@ class GeoLoad:
         if self.dlg.checkBox_3.isChecked:
             self.dlg.checkBox_3.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Consumption of quinolones/total consumption of antibiotics in o", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Consumption of quinolones/total consumption of antibiotics in o", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Consumption of quinolones/total consumption of antibiotics in o", "geom", 'id>=0','id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Consumption of quinolones/total consumption of antibiotics in o", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -277,9 +288,9 @@ class GeoLoad:
         if self.dlg.checkBox_4.isChecked:
             self.dlg.checkBox_4.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Crude mortality rate due to HIV/AIDS before the age of 65", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Crude mortality rate due to HIV/AIDS before the age of 65", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Crude mortality rate due to HIV/AIDS before the age of 65", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Crude mortality rate due to HIV/AIDS before the age of 65", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -288,9 +299,9 @@ class GeoLoad:
         if self.dlg.checkBox_5.isChecked:
             self.dlg.checkBox_5.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Crude mortality rate due to ischemic heart diseases before the ", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Crude mortality rate due to ischemic heart diseases before the ", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Crude mortality rate due to ischemic heart diseases before the ", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Crude mortality rate due to ischemic heart diseases before the ", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -299,9 +310,9 @@ class GeoLoad:
         if self.dlg.checkBox_6.isChecked:
             self.dlg.checkBox_6.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Hospital admission due to Chronic Obstructive Pulmonary Disease", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Hospital admission due to Chronic Obstructive Pulmonary Disease", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Hospital admission due to Chronic Obstructive Pulmonary Disease", "geom", 'id>=0','id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Hospital admission due to Chronic Obstructive Pulmonary Disease", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -310,9 +321,9 @@ class GeoLoad:
         if self.dlg.checkBox_7.isChecked:
             self.dlg.checkBox_7.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Hospital admission due to asthma", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Hospital admission due to asthma", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Hospital admission due to asthma", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Hospital admission due to asthma", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -321,9 +332,9 @@ class GeoLoad:
         if self.dlg.checkBox_8.isChecked:
             self.dlg.checkBox_8.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "In-hospital lethality due to ischemic heart disease", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "In-hospital lethality due to ischemic heart disease", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "In-hospital lethality due to ischemic heart disease", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "In-hospital lethality due to ischemic heart disease", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -332,9 +343,9 @@ class GeoLoad:
         if self.dlg.checkBox_9.isChecked:
             self.dlg.checkBox_9.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Incidence of CVA", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Incidence of CVA", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Incidence of CVA", "geom", 'id>=0','id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Incidence of CVA", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -343,9 +354,9 @@ class GeoLoad:
         if self.dlg.checkBox_10.isChecked:
             self.dlg.checkBox_10.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Incidence of congenital syphilis", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Incidence of congenital syphilis", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Incidence of congenital syphilis", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Incidence of congenital syphilis", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -354,9 +365,9 @@ class GeoLoad:
         if self.dlg.checkBox_11.isChecked:
             self.dlg.checkBox_11.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Infant Mortality", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Infant Mortality", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Infant Mortality", "geom", 'id>=0','id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Infant Mortality", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -365,9 +376,9 @@ class GeoLoad:
         if self.dlg.checkBox_12.isChecked:
             self.dlg.checkBox_12.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Mortality from 1 to 4 years of age", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Mortality from 1 to 4 years of age", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Mortality from 1 to 4 years of age", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Mortality from 1 to 4 years of age", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -376,9 +387,9 @@ class GeoLoad:
         if self.dlg.checkBox_13.isChecked:
             self.dlg.checkBox_13.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Number of deaths due to alcohol-related motor accidents", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Number of deaths due to alcohol-related motor accidents", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Number of deaths due to alcohol-related motor accidents", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Number of deaths due to alcohol-related motor accidents", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -387,9 +398,9 @@ class GeoLoad:
         if self.dlg.checkBox_14.isChecked:
             self.dlg.checkBox_14.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Obesity (ages 18 to 24)", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Obesity (ages 18 to 24)", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Obesity (ages 18 to 24)", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Obesity (ages 18 to 24)", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -398,9 +409,9 @@ class GeoLoad:
         if self.dlg.checkBox_15.isChecked:
             self.dlg.checkBox_15.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Overweight (ages 35 to 44)", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Overweight (ages 35 to 44)", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Overweight (ages 35 to 44)", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Overweight (ages 35 to 44)", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -409,9 +420,9 @@ class GeoLoad:
         if self.dlg.checkBox_16.isChecked:
             self.dlg.checkBox_16.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Perinatal Mortality", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Perinatal Mortality", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Perinatal Mortality", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Perinatal Mortality", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -419,9 +430,9 @@ class GeoLoad:
         if self.dlg.checkBox_17.isChecked:
             self.dlg.checkBox_17.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Potential Years of Life Lost due to diabetes", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Potential Years of Life Lost due to diabetes", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Potential Years of Life Lost due to diabetes", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Potential Years of Life Lost due to diabetes", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -430,9 +441,9 @@ class GeoLoad:
         if self.dlg.checkBox_18.isChecked:
             self.dlg.checkBox_18.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Potential Years of Life Lost due to malignant neoplasm of the t", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Potential Years of Life Lost due to malignant neoplasm of the t", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Potential Years of Life Lost due to malignant neoplasm of the t", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Potential Years of Life Lost due to malignant neoplasm of the t", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -441,9 +452,9 @@ class GeoLoad:
         if self.dlg.checkBox_19.isChecked:
             self.dlg.checkBox_19.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Ratio between hospital emergencies and outpatient appointments", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Ratio between hospital emergencies and outpatient appointments", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Ratio between hospital emergencies and outpatient appointments", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Ratio between hospital emergencies and outpatient appointments", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -452,9 +463,9 @@ class GeoLoad:
         if self.dlg.checkBox_20.isChecked:
             self.dlg.checkBox_20.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Schools with good health and safety conditions", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Schools with good health and safety conditions", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Schools with good health and safety conditions", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Schools with good health and safety conditions", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -463,9 +474,9 @@ class GeoLoad:
         if self.dlg.checkBox_21.isChecked:
             self.dlg.checkBox_21.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Standardised mortality rate due to alcohol-related diseases bef", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Standardised mortality rate due to alcohol-related diseases bef", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Standardised mortality rate due to alcohol-related diseases bef", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Standardised mortality rate due to alcohol-related diseases bef", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -474,9 +485,9 @@ class GeoLoad:
         if self.dlg.checkBox_22.isChecked:
             self.dlg.checkBox_22.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Tobacco - daily consumption (ages 65-74)", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Tobacco - daily consumption (ages 65-74)", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Tobacco - daily consumption (ages 65-74)", "geom", 'id>=0','id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Tobacco - daily consumption (ages 65-74)", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -485,9 +496,9 @@ class GeoLoad:
         if self.dlg.checkBox_23.isChecked:
             self.dlg.checkBox_23.setChecked(False)
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Used orphan medication", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Used orphan medication", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Used orphan medication", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Used orphan medication", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
@@ -496,9 +507,9 @@ class GeoLoad:
             self.dlg.checkBox_24.setChecked(False)
 
         uri = QgsDataSourceUri()
-        uri.setConnection("localhost", "5432", 'aula2', 'postgres', 'viladoconde')
-        uri.setDataSource("public", "Alcohol - consumption over the last 12 months (ages 65-74)", "geom", 'id')
-        vlayer = QgsVectorLayer(uri.uri(False), "Alcohol - consumption over the last 12 months (ages 65-74)", "postgres")
+        uri.setConnection(hname, port, dbName, username, password)
+        uri.setDataSource("public", "Alcohol - consumption over the last 12 months (ages 65-74)", "geom",'id>=0', 'id')
+        vlayer = QgsVectorLayer(uri.uri(False), "Alcohol - consumption over the last 12 months (ages 65-74)", username)
         QgsProject.instance().addMapLayer(vlayer)
         self.loadCom()
 
