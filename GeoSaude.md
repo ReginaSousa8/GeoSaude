@@ -16,3 +16,7 @@ GEOSAUDE
 	determinados inficadores de saude. 
 	Assim sendo, este vêm como mensageiro para demontrar o potenciar que a web traz no 
 	serviço às instituições de saúde.
+
+	No presente trabalho irá ser apresentada uma solução em que é possível a interpolação 
+	deste site com o software QGis para que assim haja ainda melhor percepção da 
+	distribuição destas estatisticas no pais.
