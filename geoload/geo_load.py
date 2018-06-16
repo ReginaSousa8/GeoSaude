@@ -38,16 +38,18 @@ import os.path
 
 import psycopg2
 
-
+"""set host name, port, database name, username and password"""
 hname = "localhost"
 port = "5432"
 dbName = "aula2"
 username = "postgres"
 password = "viladoconde"
+
+
 class GeoLoad:
     """QGIS Plugin Implementation."""
 
-    # set host name, port, database name, username and password
+    
 
 
 
