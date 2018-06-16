@@ -1,11 +1,10 @@
 # GeoLoad Plugin
-
-	In the present project a solution will be presented in which it is possible to visualize the interpolation of GeoSaude with the QGis software, so that there is a better perception of the distribution of the various health indicators for example in the map of Portugal.
+	Geoload plugin can be used to load multiple shapefiles from GeoSaude and from your computer to QGIS.
 
 
 ### Installing
 
-	To Run the project you must have 2 softwares installed, witch are: QGis and PgAdmin
+	To Run the project you must have 2 softwares installed: QGis and PgAdmin
 
 	Some problems may appear when installing these software.
 	If this happens, please see the links below that explain the installation of QGis and PgAdmin, respectively.
@@ -14,10 +13,10 @@
 
 ## Running And Configuration
 	1. Open PgAdmin
-	2. Create a DataBase named "aula2"
-	3. Configure in the X file the username and password
+	2. Create a DataBase and restore the "geoload.backup" file
+	3. Open "geoload.py" and set the host name, port, database name, username and password
 	4. Open QGis
-	5. Install the plugin in it
+	5. Install the plugin
 
 ## Deployment
 
@@ -35,9 +34,9 @@ Version 1.0
 
 ## Authors
 
-* **ANA MACHADO** - *Universidade Do Minho* (https://github.com/anamsmachado)
-* **ANA RAMOS** - *Universidade Do Minho* (https://github.com/anaoramos)
-* **ANA SOUSA** - *Universidade Do Minho* (https://github.com/ReginaSousa8)
+* **ANA MACHADO** - *University of Minho* (https://github.com/anamsmachado)
+* **ANA RAMOS** - *University of Minho* (https://github.com/anaoramos)
+* **ANA SOUSA** - *University of Minho* (https://github.com/ReginaSousa8)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
                                                                  
