@@ -18,15 +18,21 @@
 	4. Open QGis
 	5. Install the plugin
 
+The restore of the "geoload.backup" file has some problems, with respect to the parameters that must be placed. So, to be easier, the configuration of this is in the image below:
+
+
+
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Python] - The language used
+* [Sublime](https://www.sublimetext.com/) - The framework used to program
+* [Qgis] - The language used
+
+
 
 ## Versioning
 
