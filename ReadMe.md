@@ -23,16 +23,11 @@ The restore of the "geoload.backup" file has some problems, with respect to the 
 (https://github.com/ReginaSousa8/GeoSaude/blob/master/config.reload.png)
 
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
 * [Python] - The language used
 * [Sublime](https://www.sublimetext.com/) - The framework used to program
 * [Qgis] - The language used
-
 
 
 ## Versioning
@@ -45,5 +40,5 @@ Version 1.0
 * **ANA RAMOS** - *University of Minho* (https://github.com/anaoramos)
 * **ANA SOUSA** - *University of Minho* (https://github.com/ReginaSousa8)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/ReginaSousa8/GeoSaude/graphs/contributors) who participated in this project.
                                                                  
