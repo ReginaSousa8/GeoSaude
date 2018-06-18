@@ -20,6 +20,7 @@
 
 The restore of the "geoload.backup" file has some problems, with respect to the parameters that must be placed. So, to be easier, the configuration of this is in the image below:
 
+(https://github.com/ReginaSousa8/GeoSaude/blob/master/config.reload.png)
 
 
 ## Deployment
