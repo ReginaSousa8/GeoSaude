@@ -14,7 +14,7 @@
 ## Running And Configuration
 	1. Open PgAdmin
 	2. Create a DataBase and restore the "geoload.backup" file
-	3. Open "geoload.py" and set the host name, port, database name, username and password
+	3. Open "geo_load.py" and set the host name, port, database name, username and password
 	4. Open QGis
 	5. Install the plugin
 
