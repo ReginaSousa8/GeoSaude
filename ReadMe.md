@@ -26,7 +26,8 @@ The restore of the "geoload.backup" file has some problems, with respect to the 
 ## Built With
 
 * [Python] - The language used
-* [Sublime](https://www.sublimetext.com/) - The framework used to program
+* [PyCharm CE](https://www.jetbrains.com/pycharm/) - The framework used to program
+* [Qt](https://www.qt.io) - The framework used to create the plugin
 * [Qgis](https://qgis.org/en/site/) - The geographic Information System used in the project
 
 
