@@ -4,7 +4,7 @@
 
 ### Installing
 
-	To Run the project you must have 2 softwares installed: QGis and PgAdmin
+	To Run the project you must have 2 softwares installed: QGis3 and PgAdmin
 
 	Some problems may appear when installing these software.
 	If this happens, please see the links below that explain the installation of QGis and PgAdmin, respectively.
@@ -15,7 +15,7 @@
 	1. Open PgAdmin
 	2. Create a DataBase and restore the "geoload.backup" file
 	3. Open "geo_load.py" and set the host name, port, database name, username and password
-	4. Open QGis
+	4. Open QGis3
 	5. Install the plugin
 
 The restore of the "geoload.backup" file has some problems, with respect to the parameters that must be placed. So, to be easier, the configuration of this is in the image below:
